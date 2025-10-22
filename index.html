@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>사전예약 사이트</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <!-- 헤더 -->
+        <header class="header">
+            <div class="container">
+                <h1 class="logo">ORai</h1>
+            </div>
+        </header>
+
+        <!-- 메인 섹션 -->
+        <section id="main" class="main-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="hero-title">새로운 서비스 사전예약</h2>
+                    <p class="hero-description">
+                        특별한 혜택과 함께하는 새로운 서비스를 미리
+                        경험해보세요.<br />
+                        한정된 수량으로 진행되는 사전예약에 지금 참여하세요!
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">130%</span>
+                            <span class="stat-label">리워드 혜택</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">7일</span>
+                            <span class="stat-label">남은 기간</span>
+                        </div>
+                    </div>
+                    <a href="#reservation" class="cta-button"
+                        >사전예약 하러가기</a
+                    >
+                </div>
+            </div>
+        </section>
+
+        <!-- 예약 섹션 -->
+        <section id="reservation" class="reservation-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">사전예약 신청</h2>
+                    <p class="section-description">
+                        아래 정보를 입력하여 사전예약을 신청해주세요
+                    </p>
+                </div>
+
+                <div class="reservation-content">
+                    <div class="reservation-form-container">
+                        <form class="reservation-form" id="reservationForm">
+                            <div class="form-group">
+                                <label for="name" class="form-label"
+                                    >이름 *</label
+                                >
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    class="form-input"
+                                    required
+                                />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label"
+                                    >이메일 *</label
+                                >
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    class="form-input"
+                                    required
+                                />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone" class="form-label"
+                                    >전화번호 *</label
+                                >
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    class="form-input"
+                                    required
+                                />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="quantity" class="form-label"
+                                    >예약 수량</label
+                                >
+                                <select
+                                    id="quantity"
+                                    name="quantity"
+                                    class="form-select"
+                                >
+                                    <option value="1">1개</option>
+                                    <option value="2">2개</option>
+                                    <option value="3">3개</option>
+                                    <option value="4">4개</option>
+                                    <option value="5">5개</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">추가 옵션</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-item">
+                                        <input
+                                            type="checkbox"
+                                            name="options"
+                                            value="premium"
+                                        />
+                                        <span class="checkmark"></span>
+                                        프리미엄 옵션 추가
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input
+                                            type="checkbox"
+                                            name="options"
+                                            value="newsletter"
+                                        />
+                                        <span class="checkmark"></span>
+                                        뉴스레터 구독
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" class="form-label"
+                                    >메시지</label
+                                >
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    class="form-textarea"
+                                    rows="4"
+                                    placeholder="추가 요청사항이 있으시면 입력해주세요"
+                                ></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-button">
+                                예약 신청하기
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="reservation-info">
+                        <div class="info-card">
+                            <h3>예약 혜택</h3>
+                            <ul class="benefit-list">
+                                <li>50% 할인 혜택</li>
+                                <li>무료 배송</li>
+                                <li>우선 배송</li>
+                                <li>특별 선물 증정</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>예약 안내</h3>
+                            <ul class="info-list">
+                                <li>예약 기간: 2024년 1월 1일 ~ 1월 31일</li>
+                                <li>배송 시작: 2024년 2월 1일</li>
+                                <li>결제: 배송 전 개별 연락</li>
+                                <li>취소: 배송 3일 전까지 가능</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 푸터 -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; ORai 사전예약 사이트. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>
