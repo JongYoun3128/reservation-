@@ -174,3 +174,41 @@ document.querySelectorAll(".form-input").forEach((input) => {
         }
     });
 });
+const 조회하기 = async () => {
+    const 결과 = await fetch(url);
+    const 데이터 = await 결과.json();
+
+    console.log(">>>> 데이터 ", 데이터);
+
+    // 운영할 때 사용
+    const param = {
+        name: document.getElementById("rename").value,
+        number: document.getElementById("rephone").value,
+    };
+
+    const 투자한결과리스트 = 데이터.filter((구글데이터) => {
+        console.log(">>>> 구글데이터 ", 구글데이터);
+        console.log(">>>> 구글데이터.이름 ", 구글데이터.이름);
+        return (
+            String(구글데이터.이름).trim() == param.name &&
+            구글데이터.전화번호 == param.number
+        );
+    });
+
+    console.log(">>>> 투자한결과리스트 ", 투자한결과리스트);
+    document.getElementById("rename").value = "";
+    document.getElementById("rephone").value = "";
+
+    alert(
+        `이름: ${param.name}\n전화번호: ${param.number}\n사전예약 횟수: ${투자한결과리스트.length}회`
+    );
+    document.querySelector(".reserch-modal").style.display = "none";
+};
+const reserchModalBtn = () => {
+    const reserchModal = document.querySelector(".reserch-modal");
+    reserchModal.style.display = "none";
+};
+const reModalOpen = () => {
+    const reserchModal = document.querySelector(".reserch-modal");
+    reserchModal.style.display = "block";
+};

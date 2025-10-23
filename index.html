@@ -10,7 +10,10 @@
         <!-- 헤더 -->
         <header class="header">
             <div class="container">
-                <h1 class="logo">ORai</h1>
+                <h1 class="logo">CINEVERSE</h1>
+                <button class="reserch-btn" onclick="reModalOpen()">
+                    예약 조회하기
+                </button>
             </div>
         </header>
 
@@ -140,13 +143,40 @@
         <!-- 푸터 -->
         <footer class="footer">
             <div class="container">
-                <p>&copy; ORai All rights reserved.</p>
+                <p>&copy; cineverse All rights reserved.</p>
             </div>
         </footer>
         <div class="modal">
             <div id="modal-title">감사합니다</div>
             <div id="modal-text"></div>
             <button id="close-btn" onclick="modalClose()">닫기</button>
+        </div>
+        <div class="reserch-modal">
+            <h2>예약 조회하기</h2>
+            <div class="form-group2">
+                <label for="name" class="form-label2">이름 :</label>
+                <input
+                    type="text"
+                    id="rename"
+                    name="name"
+                    class="form-input2"
+                    required
+                />
+            </div>
+            <div class="form-group2">
+                <label for="phone" class="form-label2">전화번호 :</label>
+                <input
+                    type="tel"
+                    id="rephone"
+                    name="phone"
+                    class="form-input2"
+                    required
+                />
+            </div>
+            <button onclick="조회하기() ">조회</button>
+            <button class="reserch-close-btn" onclick="reserchModalBtn()">
+                닫기
+            </button>
         </div>
         <script src="script.js"></script>
     </body>

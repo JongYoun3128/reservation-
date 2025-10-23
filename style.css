@@ -25,6 +25,13 @@ body {
     top: 0;
     z-index: 1000;
 }
+.reserch-btn {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+}
 
 .header .container {
     display: flex;
@@ -32,7 +39,9 @@ body {
     align-items: center;
     padding: 1rem 20px;
 }
-
+.header .container button {
+    border: none;
+}
 .logo {
     font-size: 1.8rem;
     font-weight: bold;
@@ -300,6 +309,33 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
     display: none;
+}
+
+.reserch-modal {
+    width: 500px;
+    height: 300px;
+    background-color: #27ae60;
+    position: fixed;
+    z-index: 9999;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 20px;
+    display: none;
+}
+.reserch-modal h2 {
+    margin-bottom: 20px;
+}
+.form-input2 {
+    width: 80%;
+    padding: 5px;
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    margin-bottom: 50px;
 }
 
 /* 반응형 */
