@@ -331,6 +331,7 @@ body {
 .reserch-modal {
     width: 500px;
     height: 300px;
+    border-radius: 20px;
     background-color: #27ae60;
     position: fixed;
     z-index: 9999;
@@ -345,6 +346,7 @@ body {
 .result-modal {
     width: 500px;
     height: 250px;
+    border-radius: 20px;
     background-color: #27ae60;
     position: fixed;
     z-index: 9999;
