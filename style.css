@@ -342,7 +342,6 @@ body {
     text-align: center;
     box-sizing: border-box;
     padding-top: 20px;
-    display: none;
 }
 .result-modal {
     width: 500px;
@@ -363,7 +362,7 @@ body {
     padding: 5px;
 }
 .reserch-modal h2 {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 .form-input2 {
     width: 80%;
@@ -377,9 +376,11 @@ body {
 .rebtn {
     padding: 5px;
     margin-top: 40px;
+    background: #3498db;
 }
 .reserch-close-btn {
     padding: 5px;
+    background-color: #e74c3c;
 }
 .result-text {
     font-size: 20px;
