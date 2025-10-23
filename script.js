@@ -7,7 +7,10 @@ const 실행하기 = async () => {
     const idNumber = document.getElementById("phone").value;
     const address = document.getElementById("address").value;
     const idEmail = document.getElementById("email").value;
-
+    if (!idName || !idNumber || !address || !idEmail) {
+        alert("모든 필드를 작성해주세요.");
+        return;
+    }
     const modalText = document.getElementById("modal-text");
 
     // 조회
@@ -42,7 +45,7 @@ const 실행하기 = async () => {
 };
 const modalClose = () => {
     const modalBtn = document.getElementById("close-btn");
-    modalBtn.style.display = "none";
+    modal.style.display = "none";
 };
 // 스무스 스크롤링
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -80,34 +83,34 @@ document
             }
         }
 
-        // 간단한 유효성 검사
-        if (!data.name || !data.email || !data.phone) {
-            alert("필수 항목을 모두 입력해주세요.");
-            return;
-        }
+        // // 간단한 유효성 검사
+        // if (!data.name || !data.email || !data.phone) {
+        //     alert("필수 항목을 모두 입력해주세요.");
+        //     return;
+        // }
 
-        // 이메일 형식 검사
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(data.email)) {
-            alert("올바른 이메일 형식을 입력해주세요.");
-            return;
-        }
+        // // 이메일 형식 검사
+        // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        // if (!emailRegex.test(data.email)) {
+        //     alert("올바른 이메일 형식을 입력해주세요.");
+        //     return;
+        // }
 
-        // 전화번호 형식 검사
-        const phoneRegex = /^[0-9-+\s()]+$/;
-        if (!phoneRegex.test(data.phone)) {
-            alert("올바른 전화번호 형식을 입력해주세요.");
-            return;
-        }
+        // // 전화번호 형식 검사
+        // const phoneRegex = /^[0-9-+\s()]+$/;
+        // if (!phoneRegex.test(data.phone)) {
+        //     alert("올바른 전화번호 형식을 입력해주세요.");
+        //     return;
+        // }
 
-        // 성공 메시지
-        alert("사전예약이 성공적으로 신청되었습니다!\n곧 연락드리겠습니다.");
+        // // 성공 메시지
+        // alert("사전예약이 성공적으로 신청되었습니다!\n곧 연락드리겠습니다.");
 
-        // 폼 초기화
-        this.reset();
+        // // 폼 초기화
+        // this.reset();
 
-        // 콘솔에 데이터 출력 (실제로는 서버로 전송)
-        console.log("예약 데이터:", data);
+        // // 콘솔에 데이터 출력 (실제로는 서버로 전송)
+        // console.log("예약 데이터:", data);
     });
 
 // 헤더 스크롤 효과
