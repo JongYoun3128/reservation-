@@ -1,3 +1,49 @@
+const url =
+    "https://script.google.com/macros/s/AKfycbyiYzTH7VTrfMPs0WCETwIpjs0Ome-dtRVCkgb2zQitc3lJLA_EkdUOts2c7X1lNiJN9Q/exec";
+const modal = document.querySelector(".modal");
+
+const 실행하기 = async () => {
+    const idName = document.getElementById("name").value;
+    const idNumber = document.getElementById("phone").value;
+    const address = document.getElementById("address").value;
+    const idEmail = document.getElementById("email").value;
+
+    const modalText = document.getElementById("modal-text");
+
+    // 조회
+    const 결과 = await fetch(url);
+    const 데이터 = await 결과.json();
+
+    // 등록
+    const res = await fetch(url, {
+        redirect: "follow",
+        method: "POST",
+        headers: {
+            "Content-Type": "text/plain;charset=utf-8",
+        },
+        body: JSON.stringify({
+            name: idName,
+            number: idNumber,
+            address: address,
+            email: idEmail,
+        }),
+    });
+    const data = await res.json();
+
+    document.getElementById("name").value = "";
+    document.getElementById("phone").value = "";
+    document.getElementById("address").value = "";
+    document.getElementById("email").value = "";
+
+    modal.style.display = "block";
+    alert(
+        Number(데이터.length) + 1 + "번째가 되셨습니다. 정보가 전송되었습니다"
+    );
+};
+const modalClose = () => {
+    const modalBtn = document.getElementById("close-btn");
+    modalBtn.style.display = "none";
+};
 // 스무스 스크롤링
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {

@@ -66,6 +66,30 @@
                                     required
                                 />
                             </div>
+                            <div class="form-group">
+                                <label for="phone" class="form-label"
+                                    >전화번호 *</label
+                                >
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    class="form-input"
+                                    required
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="form-label"
+                                    >주소 *</label
+                                >
+                                <input
+                                    type="text"
+                                    id="address"
+                                    name="address"
+                                    class="form-input"
+                                    required
+                                />
+                            </div>
 
                             <div class="form-group">
                                 <label for="email" class="form-label"
@@ -80,74 +104,12 @@
                                 />
                             </div>
 
-                            <div class="form-group">
-                                <label for="phone" class="form-label"
-                                    >전화번호 *</label
-                                >
-                                <input
-                                    type="tel"
-                                    id="phone"
-                                    name="phone"
-                                    class="form-input"
-                                    required
-                                />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="quantity" class="form-label"
-                                    >예약 수량</label
-                                >
-                                <select
-                                    id="quantity"
-                                    name="quantity"
-                                    class="form-select"
-                                >
-                                    <option value="1">1개</option>
-                                    <option value="2">2개</option>
-                                    <option value="3">3개</option>
-                                    <option value="4">4개</option>
-                                    <option value="5">5개</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="form-label">추가 옵션</label>
-                                <div class="checkbox-group">
-                                    <label class="checkbox-item">
-                                        <input
-                                            type="checkbox"
-                                            name="options"
-                                            value="premium"
-                                        />
-                                        <span class="checkmark"></span>
-                                        프리미엄 옵션 추가
-                                    </label>
-                                    <label class="checkbox-item">
-                                        <input
-                                            type="checkbox"
-                                            name="options"
-                                            value="newsletter"
-                                        />
-                                        <span class="checkmark"></span>
-                                        뉴스레터 구독
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="message" class="form-label"
-                                    >메시지</label
-                                >
-                                <textarea
-                                    id="message"
-                                    name="message"
-                                    class="form-textarea"
-                                    rows="4"
-                                    placeholder="추가 요청사항이 있으시면 입력해주세요"
-                                ></textarea>
-                            </div>
-
-                            <button type="submit" class="submit-button">
+                            <button
+                                type="submit"
+                                class="submit-button"
+                                id="reservation-btn"
+                                onclick="실행하기()"
+                            >
                                 예약 신청하기
                             </button>
                         </form>
@@ -168,9 +130,6 @@
                             <h3>예약 안내</h3>
                             <ul class="info-list">
                                 <li>예약 기간: 2024년 1월 1일 ~ 1월 31일</li>
-                                <li>배송 시작: 2024년 2월 1일</li>
-                                <li>결제: 배송 전 개별 연락</li>
-                                <li>취소: 배송 3일 전까지 가능</li>
                             </ul>
                         </div>
                     </div>
@@ -181,10 +140,14 @@
         <!-- 푸터 -->
         <footer class="footer">
             <div class="container">
-                <p>&copy; ORai 사전예약 사이트. All rights reserved.</p>
+                <p>&copy; ORai All rights reserved.</p>
             </div>
         </footer>
-
+        <div class="modal">
+            <div id="modal-title">감사합니다</div>
+            <div id="modal-text"></div>
+            <button id="close-btn" onclick="modalClose()">닫기</button>
+        </div>
         <script src="script.js"></script>
     </body>
 </html>
