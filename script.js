@@ -1,6 +1,8 @@
 const url =
     "https://script.google.com/macros/s/AKfycbyiYzTH7VTrfMPs0WCETwIpjs0Ome-dtRVCkgb2zQitc3lJLA_EkdUOts2c7X1lNiJN9Q/exec";
 const modal = document.querySelector(".modal");
+const modalText = document.querySelector("#modal-text");
+const resultModal = document.querySelector(".result-modal");
 
 const 실행하기 = async () => {
     const idName = document.getElementById("name").value;
@@ -39,9 +41,12 @@ const 실행하기 = async () => {
     document.getElementById("email").value = "";
 
     modal.style.display = "block";
-    alert(
-        Number(데이터.length) + 1 + "번째가 되셨습니다. 정보가 전송되었습니다"
-    );
+    modalText.innerText = ` ${
+        Number(데이터.length) + 1
+    } 번째 사전예약자 입니다.\n 정보 전송이 완료되었습니다.`;
+    // alert(
+    //     Number(데이터.length) + 1 + "번째가 되셨습니다. 정보가 전송되었습니다"
+    // );
 };
 const modalClose = () => {
     const modalBtn = document.getElementById("close-btn");
@@ -174,9 +179,14 @@ document.querySelectorAll(".form-input").forEach((input) => {
         }
     });
 });
+
+//조회하기
 const 조회하기 = async () => {
     const 결과 = await fetch(url);
     const 데이터 = await 결과.json();
+    const resultText1 = document.querySelector(".result-text1");
+    const resultText2 = document.querySelector(".result-text2");
+    const resultText3 = document.querySelector(".result-text3");
 
     console.log(">>>> 데이터 ", 데이터);
 
@@ -199,9 +209,14 @@ const 조회하기 = async () => {
     document.getElementById("rename").value = "";
     document.getElementById("rephone").value = "";
 
-    alert(
-        `이름: ${param.name}\n전화번호: ${param.number}\n사전예약 횟수: ${투자한결과리스트.length}회`
-    );
+    resultModal.style.display = "block";
+    resultText1.innerHTML = `이름: ${param.name}`;
+    resultText2.innerHTML = `전화번호: ${param.number}`;
+    resultText3.innerHTML = `사전예약 횟수: ${투자한결과리스트.length}회`;
+
+    // alert(
+    //     `이름: ${param.name}\n전화번호: ${param.number}\n사전예약 횟수: ${투자한결과리스트.length}회`
+    // );
     document.querySelector(".reserch-modal").style.display = "none";
 };
 const reserchModalBtn = () => {
@@ -211,4 +226,7 @@ const reserchModalBtn = () => {
 const reModalOpen = () => {
     const reserchModal = document.querySelector(".reserch-modal");
     reserchModal.style.display = "block";
+};
+const resultColse = () => {
+    resultModal.style.display = "none";
 };
