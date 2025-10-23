@@ -354,6 +354,7 @@ body {
     text-align: center;
     box-sizing: border-box;
     padding-top: 30px;
+    display: none;
 }
 #result-modal-close {
     padding: 5px;
