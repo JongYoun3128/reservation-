@@ -214,6 +214,9 @@ const 조회하기 = async () => {
             구글데이터.전화번호 == param.number
         );
     });
+    const 투자한횟수 = 투자한결과리스트.reduce((acc, cur) => {
+        return acc + Number(cur.수량 || 0);
+    }, 0);
 
     console.log(">>>> 투자한결과리스트 ", 투자한결과리스트);
     document.getElementById("rename").value = "";
@@ -222,7 +225,16 @@ const 조회하기 = async () => {
     resultModal.style.display = "block";
     resultText1.innerHTML = `이름: ${param.name}`;
     resultText2.innerHTML = `전화번호: ${param.number}`;
-    resultText3.innerHTML = `사전예약 횟수: ${투자한결과리스트.length}회`;
+    resultText3.innerHTML = `사전예약 횟수: ${투자한횟수}회`;
+
+    // console.log(">>>> 투자한결과리스트 ", 투자한결과리스트);
+    // document.getElementById("rename").value = "";
+    // document.getElementById("rephone").value = "";
+
+    // resultModal.style.display = "block";
+    // resultText1.innerHTML = `이름: ${param.name}`;
+    // resultText2.innerHTML = `전화번호: ${param.number}`;
+    // resultText3.innerHTML = `사전예약 횟수: ${투자한결과리스트.length}회`;
 
     dim.style.display = "none";
     // alert(
