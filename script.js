@@ -232,6 +232,7 @@ const reserchModalBtn = () => {
 };
 const reModalOpen = () => {
     const reserchModal = document.querySelector(".reserch-modal");
+    dim.style.display = "block";
     reserchModal.style.display = "block";
 };
 const resultColse = () => {
