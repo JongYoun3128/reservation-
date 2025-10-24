@@ -267,11 +267,12 @@ body {
     padding: 1rem;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
 }
 
 .info-card h3 {
     color: #2c3e50;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1.8rem;
     font-size: 1.3rem;
 }
 
@@ -285,7 +286,7 @@ body {
 .info-card2 h3 {
     color: #2c3e50;
     font-size: 1.3rem;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1.8rem;
 }
 
 .benefit-list,

@@ -1,5 +1,5 @@
 const url =
-    "https://script.google.com/macros/s/AKfycbyiYzTH7VTrfMPs0WCETwIpjs0Ome-dtRVCkgb2zQitc3lJLA_EkdUOts2c7X1lNiJN9Q/exec";
+    "https://script.google.com/macros/s/AKfycbyjrvlKPcSEtGxf6YCyNW6B9uVxeRRpNszPQO2b0I9kWT2_SPRt7OlgMyy7pMLYtAiY/exec";
 const modal = document.querySelector(".modal");
 const modalText = document.querySelector("#modal-text");
 const resultModal = document.querySelector(".result-modal");
@@ -10,7 +10,8 @@ const 실행하기 = async () => {
     const idNumber = document.getElementById("phone").value;
     const address = document.getElementById("address").value;
     const idEmail = document.getElementById("email").value;
-    if (!idName || !idNumber || !address || !idEmail) {
+    const count = document.getElementById("number").value;
+    if (!idName || !idNumber || !address || !idEmail || !count) {
         alert("모든 필드를 작성해주세요.");
         return;
     }
@@ -32,6 +33,7 @@ const 실행하기 = async () => {
             number: idNumber,
             address: address,
             email: idEmail,
+            count: count,
         }),
     });
     const data = await res.json();
@@ -40,6 +42,7 @@ const 실행하기 = async () => {
     document.getElementById("phone").value = "";
     document.getElementById("address").value = "";
     document.getElementById("email").value = "";
+    document.getElementById("number").value = "";
 
     modal.style.display = "block";
     modalText.innerText = ` ${
