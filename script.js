@@ -229,6 +229,7 @@ const 조회하기 = async () => {
 const reserchModalBtn = () => {
     const reserchModal = document.querySelector(".reserch-modal");
     reserchModal.style.display = "none";
+    dim.style.display = "none";
 };
 const reModalOpen = () => {
     const reserchModal = document.querySelector(".reserch-modal");
