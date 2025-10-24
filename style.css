@@ -442,4 +442,13 @@ body {
     .nav {
         gap: 1rem;
     }
+    .modal {
+        width: 400px;
+    }
+    .result-modal {
+        width: 400px;
+    }
+    .reserch-modal {
+        width: 400px;
+    }
 }

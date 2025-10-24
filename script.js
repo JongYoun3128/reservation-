@@ -195,6 +195,10 @@ const 조회하기 = async () => {
         name: document.getElementById("rename").value,
         number: document.getElementById("rephone").value,
     };
+    if (!param.name || !param.number) {
+        alert("모든 필드를 작성해주세요.");
+        return;
+    }
 
     const 투자한결과리스트 = 데이터.filter((구글데이터) => {
         console.log(">>>> 구글데이터 ", 구글데이터);
