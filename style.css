@@ -264,27 +264,28 @@ body {
 
 .info-card {
     background: white;
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 .info-card h3 {
     color: #2c3e50;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     font-size: 1.3rem;
 }
+
 .info-card2 {
     background: white;
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
-.info-card h3 {
+.info-card2 h3 {
     color: #2c3e50;
-    margin-bottom: 1rem;
     font-size: 1.3rem;
+    margin-bottom: 0.8rem;
 }
 
 .benefit-list,
@@ -294,7 +295,7 @@ body {
 
 .benefit-list li,
 .info-list li {
-    padding: 0.5rem 0;
+    padding: 0.2rem 0;
     border-bottom: 1px solid #f0f0f0;
 }
 
