@@ -79,7 +79,7 @@ body {
 
 .main-section .container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     gap: 4rem;
     align-items: center;
 }
@@ -422,6 +422,10 @@ body {
 }
 /* 반응형 */
 @media (max-width: 768px) {
+    .header .container {
+        justify-content: center;
+        flex-direction: column;
+    }
     .main-section .container {
         grid-template-columns: 1fr;
         text-align: center;
