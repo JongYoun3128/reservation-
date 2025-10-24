@@ -15,7 +15,7 @@ const 실행하기 = async () => {
         return;
     }
     const modalText = document.getElementById("modal-text");
-
+    dim.style.display = "block";
     // 조회
     const 결과 = await fetch(url);
     const 데이터 = await 결과.json();
@@ -42,11 +42,10 @@ const 실행하기 = async () => {
     document.getElementById("email").value = "";
 
     modal.style.display = "block";
-    dim.style.display = "block";
     modalText.innerText = ` ${
         Number(데이터.length) + 1
     } 번째 사전예약자 입니다.\n 정보 전송이 완료되었습니다.`;
-
+    dim.style.display = "none";
     // alert(
     //     Number(데이터.length) + 1 + "번째가 되셨습니다. 정보가 전송되었습니다"
     // );
@@ -185,6 +184,8 @@ document.querySelectorAll(".form-input").forEach((input) => {
 
 //조회하기
 const 조회하기 = async () => {
+    dim.style.display = "block";
+    document.querySelector(".reserch-modal").style.display = "none";
     const 결과 = await fetch(url);
     const 데이터 = await 결과.json();
     const resultText1 = document.querySelector(".result-text1");
@@ -192,7 +193,6 @@ const 조회하기 = async () => {
     const resultText3 = document.querySelector(".result-text3");
 
     console.log(">>>> 데이터 ", 데이터);
-
     // 운영할 때 사용
     const param = {
         name: document.getElementById("rename").value,
@@ -221,10 +221,10 @@ const 조회하기 = async () => {
     resultText2.innerHTML = `전화번호: ${param.number}`;
     resultText3.innerHTML = `사전예약 횟수: ${투자한결과리스트.length}회`;
 
+    dim.style.display = "none";
     // alert(
     //     `이름: ${param.name}\n전화번호: ${param.number}\n사전예약 횟수: ${투자한결과리스트.length}회`
     // );
-    document.querySelector(".reserch-modal").style.display = "none";
 };
 const reserchModalBtn = () => {
     const reserchModal = document.querySelector(".reserch-modal");
