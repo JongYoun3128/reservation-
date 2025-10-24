@@ -3,6 +3,7 @@ const url =
 const modal = document.querySelector(".modal");
 const modalText = document.querySelector("#modal-text");
 const resultModal = document.querySelector(".result-modal");
+const dim = document.querySelector(".dim");
 
 const 실행하기 = async () => {
     const idName = document.getElementById("name").value;
@@ -41,9 +42,11 @@ const 실행하기 = async () => {
     document.getElementById("email").value = "";
 
     modal.style.display = "block";
+    dim.style.display = "block";
     modalText.innerText = ` ${
         Number(데이터.length) + 1
     } 번째 사전예약자 입니다.\n 정보 전송이 완료되었습니다.`;
+
     // alert(
     //     Number(데이터.length) + 1 + "번째가 되셨습니다. 정보가 전송되었습니다"
     // );
@@ -234,3 +237,5 @@ const reModalOpen = () => {
 const resultColse = () => {
     resultModal.style.display = "none";
 };
+var spinner = new Spinner({ color: "#3498db" }).spin();
+document.getElementById("spinner").appendChild(spinner.el);
