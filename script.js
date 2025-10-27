@@ -225,7 +225,7 @@ const 조회하기 = async () => {
     resultModal.style.display = "block";
     resultText1.innerHTML = `이름: ${param.name}`;
     resultText2.innerHTML = `전화번호: ${param.number}`;
-    resultText3.innerHTML = `사전예약 횟수: ${투자한횟수}회`;
+    resultText3.innerHTML = `사전예약금액: ${투자한횟수}원`;
 
     // console.log(">>>> 투자한결과리스트 ", 투자한결과리스트);
     // document.getElementById("rename").value = "";

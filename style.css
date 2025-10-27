@@ -70,7 +70,9 @@ body {
 .nav-link:hover {
     color: #3498db;
 }
-
+.go-btn {
+    text-align: center;
+}
 /* 메인 섹션 */
 .main-section {
     background-image: url(./images/banner.png);
@@ -319,6 +321,8 @@ body {
 }
 .info-card-num {
     display: none;
+    background-color: #f8f9fa;
+    box-shadow: none;
 }
 /* 푸터 */
 .footer {
