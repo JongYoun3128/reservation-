@@ -96,7 +96,9 @@ body {
     margin-bottom: 1.5rem;
     line-height: 1.2;
 }
-
+.red-text {
+    color: #d8bf5c;
+}
 .hero-description {
     font-size: 1.2rem;
     margin-bottom: 2rem;
@@ -117,14 +119,19 @@ body {
     display: block;
     font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.1rem;
 }
 
 .stat-label {
     font-size: 0.9rem;
     opacity: 0.8;
 }
-
+.stat-item p span {
+    color: #d8bf5c;
+}
+.text-text {
+    margin-top: 30px;
+}
 .cta-button {
     display: inline-block;
     background: #d8bf5c;
