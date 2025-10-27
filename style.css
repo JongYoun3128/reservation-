@@ -317,6 +317,9 @@ body {
     font-weight: bold;
     margin-right: 0.5rem;
 }
+.info-card-num {
+    display: none;
+}
 /* 푸터 */
 .footer {
     background: #2c3e50;
@@ -548,5 +551,11 @@ body {
     }
     .footer-text p {
         margin-bottom: 30px;
+    }
+    .footer-num {
+        display: none;
+    }
+    .info-card-num {
+        display: block;
     }
 }
