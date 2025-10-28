@@ -9,9 +9,8 @@ const 실행하기 = async () => {
     const idName = document.getElementById("name").value;
     const idNumber = document.getElementById("phone").value;
     const address = document.getElementById("address").value;
-    const idEmail = document.getElementById("email").value;
     const count = document.getElementById("number").value;
-    if (!idName || !idNumber || !address || !idEmail || !count) {
+    if (!idName || !idNumber || !address || !count) {
         alert("모든 필드를 작성해주세요.");
         return;
     }
@@ -32,7 +31,6 @@ const 실행하기 = async () => {
             name: idName,
             number: idNumber,
             address: address,
-            email: idEmail,
             count: count,
         }),
     });
@@ -41,7 +39,7 @@ const 실행하기 = async () => {
     document.getElementById("name").value = "";
     document.getElementById("phone").value = "";
     document.getElementById("address").value = "";
-    document.getElementById("email").value = "";
+    // document.getElementById("email").value = "";
     document.getElementById("number").value = "";
 
     modal.style.display = "block";

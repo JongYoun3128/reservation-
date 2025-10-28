@@ -489,6 +489,9 @@ body {
     border: 1px solid gray;
     cursor: pointer;
 }
+.small {
+    font-size: 12px;
+}
 .rebtn:hover {
     background-color: #333;
     color: white;
