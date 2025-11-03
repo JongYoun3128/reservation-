@@ -252,5 +252,3 @@ const reModalOpen = () => {
 const resultColse = () => {
     resultModal.style.display = "none";
 };
-var spinner = new Spinner({ color: "#3498db" }).spin();
-document.getElementById("spinner").appendChild(spinner.el);
