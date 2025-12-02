@@ -97,6 +97,12 @@ body {
     margin-bottom: 1.5rem;
     line-height: 1.2;
 }
+.point {
+    font-size: 13px;
+    font-weight: bold;
+    color: #d8bf5c;
+    margin-top: 10px;
+}
 .red-text {
     color: #d8bf5c;
 }
