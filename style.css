@@ -89,7 +89,12 @@ body {
     gap: 4rem;
     align-items: center;
 }
-
+.big-size {
+    display: block;
+}
+.small-size {
+    display: none;
+}
 .hero-title {
     font-size: 2.7rem;
     font-weight: bold;
@@ -195,7 +200,8 @@ body {
 
 .section-description {
     font-size: 1.1rem;
-    color: #666;
+    color: #444;
+    font-weight: bold;
 }
 
 .reservation-content {
@@ -580,7 +586,12 @@ body {
     .reservation-content {
         grid-template-columns: 1fr;
     }
-
+    .big-size {
+        display: none;
+    }
+    .small-size {
+        display: block;
+    }
     .nav {
         gap: 1rem;
     }
