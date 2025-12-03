@@ -1,16 +1,31 @@
 const url =
-    "https://script.google.com/macros/s/AKfycbyjrvlKPcSEtGxf6YCyNW6B9uVxeRRpNszPQO2b0I9kWT2_SPRt7OlgMyy7pMLYtAiY/exec";
+    "https://script.google.com/macros/s/AKfycbyYbARf-FerEvq9PR6M5R6zz1ZwfbcvlpySUMiplLV9uEwTD6nrFgSZa0z3ZaD7t5bc/exec";
 const modal = document.querySelector(".modal");
 const modalText = document.querySelector("#modal-text");
 const resultModal = document.querySelector(".result-modal");
 const dim = document.querySelector(".dim");
 
 const 실행하기 = async () => {
-    const idName = document.getElementById("name").value;
-    const idNumber = document.getElementById("phone").value;
+    const userId = document.getElementById("userId").value;
+    const name = document.getElementById("name").value;
+    const birthdate = document.getElementById("birthdate").value;
+    const genderRadio = document.querySelector('input[name="gender"]:checked');
+    const gender = genderRadio ? genderRadio.value : "";
+    const phone = document.getElementById("phone").value;
     const address = document.getElementById("address").value;
-    const count = document.getElementById("number").value;
-    if (!idName || !idNumber || !address || !count) {
+    const amount = document.getElementById("amount").value;
+    const referrer = document.getElementById("referrer").value;
+
+    if (
+        !userId ||
+        !name ||
+        !birthdate ||
+        !gender ||
+        !phone ||
+        !address ||
+        !amount ||
+        !referrer
+    ) {
         alert("모든 필드를 작성해주세요.");
         return;
     }
@@ -28,24 +43,31 @@ const 실행하기 = async () => {
             "Content-Type": "text/plain;charset=utf-8",
         },
         body: JSON.stringify({
-            name: idName,
-            number: idNumber,
+            userId: userId,
+            name: name,
+            birthdate: birthdate,
+            gender: gender === "male" ? "남성" : "여성",
+            phone: phone,
             address: address,
-            count: count,
+            amount: amount,
+            referrer: referrer,
         }),
     });
     const data = await res.json();
 
+    document.getElementById("userId").value = "";
     document.getElementById("name").value = "";
+    document.getElementById("birthdate").value = "";
+    document
+        .querySelectorAll('input[name="gender"]')
+        .forEach((radio) => (radio.checked = false));
     document.getElementById("phone").value = "";
     document.getElementById("address").value = "";
-    // document.getElementById("email").value = "";
-    document.getElementById("number").value = "";
+    document.getElementById("amount").value = "";
+    document.getElementById("referrer").value = "";
 
     modal.style.display = "block";
-    modalText.innerText = ` ${
-        Number(데이터.length) + 1
-    } 번째 사전예약자 입니다.\n 정보 전송이 완료되었습니다.`;
+    modalText.innerText = "충전 가입 신청이 완료 되었습니다.";
     dim.style.display = "none";
     // alert(
     //     Number(데이터.length) + 1 + "번째가 되셨습니다. 정보가 전송되었습니다"
@@ -112,7 +134,9 @@ document
         // }
 
         // // 성공 메시지
-        alert("사전예약이 성공적으로 신청되었습니다!\n잠시만 기다려 주세요.");
+        alert(
+            "충전 가입신청이 성공적으로 신청되었습니다!\n잠시만 기다려 주세요."
+        );
 
         // // 폼 초기화
         // this.reset();
